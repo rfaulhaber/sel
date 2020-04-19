@@ -28,7 +28,7 @@ fn main() -> io::Result<()> {
 	for el in parsed_html.select(&selector) {
 		match attr {
 			Some(a) => println!("{}", el.value().attr(a).unwrap_or("")),
-			None => println!("{:?}", el.value()),
+			None => println!("{}", el.inner_html()),
 		}
 	}
 
